@@ -1,0 +1,23 @@
+<form ng-show="user.facebookid" name="userForm" ng-submit="userForm.$valid && addUser()" novalidate>
+    <input type="hidden" ng-model="user.facebookid" name="facebookid" id="facebookid" />
+    <input type="hidden" ng-model="user.username" name="username" id="username" />
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" ng-model="user.name" class="form-control" name="name" readonly="readonly" value="" id="name" />
+    </div>
+    <div class="form-group">
+        <label for="birthdate">Nascimento</label>
+        <input type="date" ng-model="user.birthdate" class="form-control" name="birthdate" value="" id="birthdate" required />
+    </div>
+    <div class="form-group">
+        <label for="gender">Sexo</label>
+        <select required name="gender" ng-model="user.gender" class="form-control" id="gender">
+            <option value="">-</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-block">Salvar</button>
+    </div>
+</form>

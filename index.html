@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="faceLogin">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar com Facebook</title>
+    <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    
+    <script data-require="angular.js@1.4.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js" data-semver="1.4.3"></script>
+    
+    <script src="bower_components/angular-easyfb/angular-easyfb.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+        .ng-invalid.ng-dirty{
+            border-color: #FA787E;
+        }
+        .ng-valid.ng-dirty{
+            border-color: #78FA89;
+        }
+    </style>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    
+    <div class="container">
+      <h2>Cadastrar com Facebook</h2>
+
+      <div>
+        <button class="btn btn-primary" ng-click="login()" ng-disabled="loginStatus.status == 'connected'">Carregar dados do Facebook</button>
+         &nbsp; 
+        
+      </div>
+      
+      <br>
+
+      <div class="row">
+        <div class="col-md-12">
+          <user-data></user-data>
+        </div>
+      </div>
+
+      <div class="row" ng-show="success">
+        <div class="alert alert-success" role="alert">
+          <strong>Pronto!</strong> Seu cadastro foi efetuado.
+        </div>
+      </div>
+
+      <div class="row" ng-show="fail">
+        <div class="alert alert-danger" role="alert">
+          <strong>Ops!</strong> <input ng-model="fail" value="" class="form-control" readonly="readonly" />
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>
