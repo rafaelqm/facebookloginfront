@@ -5,6 +5,9 @@ Front in Angular.JS to authentication at Facebook and send to REST API the data 
 
 Send to a root folder at a access granted to web, and configure the Facebook ID of your app at Facebook
 
+* Facebook App
+You must have already created an app at https://developers.facebook.com/quickstarts/?platform=web and setted the url address to the address where this front app will run.
+
 at line 9 at app.js
     appId: '{{YOUR APP ID}}'
 
